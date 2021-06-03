@@ -8,6 +8,7 @@ You can use this script to set the background image of your mozilla firefox brow
 3. Go to the chrome directory and create a directory called __img__. Move your image to the img directory.
 4. Now you could `git clone` the repo to the chrome folder
 5. Make `swapimage.py` executable and add to crontab
+6. Go to the url about:config, accept the risk (we will not really do anything harmful here, nothing to worry about), and in the Search Bar, paste toolkit.legacyUserProfileCustomizations.stylesheets, and set the value to true. This tells Firefox to load the CSS file at startup.
 
 # For those who love copy pasting :wink:
 
@@ -27,3 +28,4 @@ In my case working somethnig like that:
 SHELL=/bin/bash
 @reboot ~/.mozilla/firefox/aolcyudt.default-release/chrome/swapimage.py  ~/.mozilla/firefox/aolcyudt.default-release/chrome/img/
 ```
+### Remember to to set enable css loading look step 6

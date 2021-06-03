@@ -1,8 +1,7 @@
+#!/usr/bin/python3
 import os
 import random
 import sys
-
-path = sys.argv[1]
 
 def get_files(path: str) -> list:
     assert path is not None
@@ -10,12 +9,15 @@ def get_files(path: str) -> list:
     return [f for f in os.listdir(path)]
 
 def rename(path: str) -> None:
-    img = random.choice(get_files('img/'))
+    img = random.choice(get_files(path))
+    assert get_files(path) != [] 
+    print(get_files(path))
 
     if img == "1.jpg":
         return
 
-    os.rename("img/1.jpg", "img/" + str(random.randint(1, 99999999999))+ ".jpg")
-    os.rename("img/" + img, "img/1.jpg")
+    os.rename(path + "1.jpg", path + str(random.randint(1, 99999999999))+ ".jpg")
+    os.rename(path + img, path+"/1.jpg")
 
+path = sys.argv[1]
 rename(path)
